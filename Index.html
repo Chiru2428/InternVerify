@@ -1,0 +1,145 @@
+
+<nav class="navbar navbar-light" style="background-color:#337ab7;min-height: 15px !important;margin-bottom: 0px;">
+ <!-- <div class="container">
+    <a class="navbar-brand" href="https://eduskillsfoundation.org/">
+      <img src="https://eduskillsfoundation.org/wp-content/uploads/2019/09/logo.png" alt="" style="max-height:60px"/>
+    </a>
+    <a class="navbar-brand navbar-right" href="#">
+      <img src="https://aicte-india.org/sites/default/files/logo_new.png" alt="" style="max-height:60px"/>
+    </a>
+  </div>-->
+</nav>
+<div><img src="C:\Users\chira\Desktop/aicte1million2.png" alt="AICTE 1 Million" width="100%"/></div>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AICTE Inernship Certification Management Portal</title>
+  <div>
+  <img src="C:\Users\chira\Pictures\Screenshots\Name1.png"  class="center">
+  
+  <style>
+  .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+  </style>
+  </div>
+
+
+  
+  <link rel="icon" type="image/png" href="https://eduskillsfoundation.org/wp-content/uploads/2019/10/icon.png"/>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.6 -->
+  <link rel="stylesheet" href="../../bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../../dist/css/skins/_all-skins.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+
+  <link rel="stylesheet" href="../../dist/css/style.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-busy/4.1.4/angular-busy.css" integrity="sha512-sWk/3tdIZOT5Gn+W06CASn6so+Mgym5bryHp3f4QkA/BzmktgjHBMRJoADKMLAFuNIOU9VPjvJONMTH5V+khqA==" crossorigin="anonymous" />
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- jQuery 2.2.3 -->
+  <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip 
+  <script>
+    $.widget.bridge('uibutton', $.ui.button);
+  </script>
+-->
+  <!-- Bootstrap 3.3.6 -->
+  <script src="../../bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.js" integrity="sha512-CiKQCmN86Y1I8Ewkt2gGnSNmsiVrS9Ez5MoudCBhTiBJScg+GjA9OlKdaeI0IuxdCl43Fs5x5zpeew2hfOatOA==" crossorigin="anonymous"></script> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js" integrity="sha512-c2T3C9cjX/WQscZb+Qws0CqbPujwNik3JPOzn4r/PwHDYdIVxC+LXOY51+4qAsR2wutl7iC0at47X1EIroFq5A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/js/papaparse.js"></script>
+  <script src="/js/papaparse.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.4.3/purify.min.js" integrity="sha512-3dcbndbDLLWfKWevQu8C/1qVRcxx6h+eRDSnn3/pcBZHISRJgsj3u71U/Ad6nQVHrEi05hOSr6Hnb/p0pWc94w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+
+@media only screen and (max-width: 600px) {
+  .register-box{
+  width:100%;
+  margin: 3% auto;
+}
+}
+
+.register-box-body {
+    background: #337ab7;
+    color: #fff;
+}
+@media only screen and (min-width: 600px) {
+.register-box{
+  width:50%;
+  margin: 3% auto;
+}
+}
+</style>
+</head>
+<body class="hold-transition">
+<div class="register-box" ng-app="myApp" ng-controller="certController">
+  
+
+  <div class="register-box-body" ng-cloak>
+    
+    <div cg-busy="myPromise"></div>
+    <div ng-show="certnotverified" style="color:whitesmoke">
+    <h3 class="login-box-msg"><img src="/images/notverified.jpg" width="30%"/><br/>
+    <p>{{errmsg}}</p></h3>
+    </div>
+    <div ng-show="certverified" style="color:whitesmoke">
+    <h3 class="login-box-msg"><img src="C:\Users\chira\Desktop/checked.gif" width="30%"/><br/>AICTE Internship Certificate is successfully verified</h3>
+
+    <h4>Certificate ID: c783c48b91cbd6ce7df786aa51623178</h4>
+    <h4>Issued On: 11 Jun 2024</h4>
+    <h4>Issued To: KANDUKURI CHIRANJEEVI NAIDU</h4>
+    <h4>Institute: DVR & Dr. HS MIC College of Technology</h4>
+    <h4>Internship: AWS DATA ENGINEERING VIRTUAL INTERNSHIP (APR - JUN 2024)</h4>
+    <h4>Grade: P</h4>
+    </div>
+    <div style="border: solid 1px white">
+	<div class="row">
+	<div class="col-md-12">
+		<p>Grade Details</p>
+	</div>
+	</div>
+<div class="row">
+<div class="col-md-6" style="border 1px solid">	
+<p>O- Outstanding - 90-100<br/>
+E- Excellent : 80-89<br/>
+A- Very Good : 70-79<br/>
+B- Good : 60-69</br></p>
+</div>
+<div class="col-md-6" style="border 1px solid">	
+<p>C- Fair : 50-59</br>
+D- Avarage : 40-49</br>
+P- Pass : 30-39</br>
+F- Fail : Bellow 30</p>
+	</div>
+	</div>
+  </div>
+  <!-- /.form-box -->
+</div>
+
+
+</body>
+</html>
